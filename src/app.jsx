@@ -1,16 +1,24 @@
 import styles from "./app.module.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Game, Login, Score } from "./router";
+import { Game, Login, CardGame, GameList } from "./router";
 
-function App() {
+function App({ authService }) {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Login />} />
-        <Route exact path="/Game" element={<Game />} />
-        <Route exact path="/Score" element={<Score />} />
-      </Routes>
-    </BrowserRouter>
+    <div className={styles.app}>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Login authService={authService} />} />
+          <Route
+            exact
+            path="/game"
+            element={<Game authService={authService} />}
+          >
+            <Route path="list" element={<GameList />} />
+            <Route path="card_game" element={<CardGame />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

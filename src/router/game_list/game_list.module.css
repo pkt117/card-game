@@ -1,0 +1,11 @@
+@value makerWhite from "../../common/colors.css";
+
+.title {
+  color: makerWhite;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.list {
+  list-style: none;
+}

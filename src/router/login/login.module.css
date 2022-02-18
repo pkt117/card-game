@@ -1,0 +1,52 @@
+@value makerYellow from "../../common/colors.css";
+
+.login {
+  width: 30em;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em 3em;
+}
+
+.title {
+  text-align: center;
+}
+
+.button {
+  width: 100%;
+  padding: 0.1em 3em;
+  border: 0;
+  outline: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 0.8em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.kakao {
+  background-color: makerYellow;
+}
+
+.button:hover {
+  opacity: 0.6;
+}
+
+.image {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0;
+  flex-basis: 5%;
+}
+
+.text {
+  flex-basis: 95%;
+  font-family: Roboto;
+  font-size: 1.1rem;
+  font-weight: bold;
+}

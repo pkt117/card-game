@@ -1,7 +1,7 @@
 import React from "react";
 
-const Score = (props) => {
+const CardGame = (props) => {
   return <h1>score</h1>;
 };
 
-export default Score;
+export default CardGame;
