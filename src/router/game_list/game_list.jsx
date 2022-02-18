@@ -3,10 +3,15 @@ import styles from "./game_list.module.css";
 import ListCard from "../../components/list_card/list_card";
 import { useNavigate } from "react-router-dom";
 
-const GameList = (props) => {
+const GameList = ({ firebaseDB }) => {
   const navigate = useNavigate();
-  const onClickGame = (path) => {
-    navigate(path);
+
+  const onClickGame = async (path, colectionName) => {
+    const data = await firebaseDB.getData(colectionName);
+
+    navigate(path, {
+      state: { data: data },
+    });
   };
 
   return (
@@ -18,6 +23,7 @@ const GameList = (props) => {
           img="../images/gameicon.png"
           gameTitle="card game"
           path="/game/card_game"
+          colectionName="card"
         />
       </ul>
     </>

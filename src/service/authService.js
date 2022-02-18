@@ -4,6 +4,8 @@ import {
   signInAnonymously,
   signInWithPopup,
   onAuthStateChanged,
+  signOut,
+  deleteUser,
 } from "firebase/auth";
 
 export default class AuthService {
@@ -34,5 +36,17 @@ export default class AuthService {
         return console.log(error);
       }
     }
+  }
+
+  logout() {
+    const name = this.auth.currentUser.displayName;
+    if (name == null) {
+      deleteUser(this.auth.currentUser);
+    }
+    signOut(this.auth);
+  }
+
+  user() {
+    return this.auth.currentUser;
   }
 }

@@ -4,17 +4,13 @@ import styles from "./login.module.css";
 
 const Login = ({ authService }) => {
   const navigate = useNavigate();
-  const goToGame = (uid, name) => {
-    navigate("/game/list", {
-      state: { id: uid, name: name ? name : "게스트" },
-    });
+  const goToGame = () => {
+    navigate("/game/list");
   };
 
   const onClickButton = (event) => {
     const value = event.currentTarget.dataset.value;
-    authService
-      .login(value)
-      .then((data) => goToGame(data.user.uid, data.user.displayName));
+    authService.login(value).then(() => goToGame());
   };
 
   useEffect(() => {
@@ -26,7 +22,7 @@ const Login = ({ authService }) => {
   return (
     <section className={styles.login}>
       <header className={styles.header}>
-        <h1 className={styles.title}>Card Matching Game</h1>
+        <h1 className={styles.title}>Mini Games</h1>
       </header>
       <section className={styles.container}>
         <button
