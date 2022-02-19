@@ -14,7 +14,10 @@ function App({ authService, firebaseDB }) {
             element={<Game authService={authService} />}
           >
             <Route path="list" element={<GameList firebaseDB={firebaseDB} />} />
-            <Route path="card_game" element={<CardGame />} />
+            <Route
+              path="card_game"
+              element={<CardGame firebaseDB={firebaseDB} />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>

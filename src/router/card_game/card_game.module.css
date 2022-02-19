@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .container {
@@ -16,4 +17,35 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.containerStop {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.play,
+.stop {
+  width: 9rem;
+  height: 5rem;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: all 200ms ease-in-out;
+}
+
+.play:hover,
+.stop:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.stop {
+  position: absolute;
+}
+
+.play {
+  position: absolute;
+  right: 2rem;
 }

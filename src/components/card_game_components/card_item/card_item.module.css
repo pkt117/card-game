@@ -1,10 +1,42 @@
-.card {
+@value makerBlack from "../../../common/colors.css";
+
+.container {
   width: 10rem;
   height: 10rem;
   margin: 0.5em;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2em;
+  transition: all 300ms ease-in-out;
+  background-color: makerBlack;
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+
+.card:hover {
+  opacity: 0.8;
+}
+
+.back {
+  transform: rotateY(180deg);
 }
 
 .image {
   width: 100%;
   height: 100%;
+  border-radius: 2em;
+}
+
+.back_image {
+  width: 50%;
+  height: 50%;
+  border-radius: 2em;
 }
