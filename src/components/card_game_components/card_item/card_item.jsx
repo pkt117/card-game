@@ -1,18 +1,27 @@
 import React, { useEffect, useState } from "react";
 import styles from "./card_item.module.css";
 
+// 카드게임의 각각의 카드
 const CardItem = ({ img, value }) => {
   const [rotate, setRotate] = useState(true);
+  const [prohibition, setProhibition] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setRotate(false);
+      setProhibition(true);
     }, 2000);
   }, []);
 
   const onClickCard = () => setRotate((prev) => !prev);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={
+        prohibition
+          ? styles.container
+          : `${styles.container} ${styles.prohibition}`
+      }
+    >
       <div
         className={rotate ? styles.card : `${styles.card} ${styles.back}`}
         onClick={onClickCard}

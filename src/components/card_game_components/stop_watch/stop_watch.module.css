@@ -1,0 +1,9 @@
+@value makerWhite from "../../../common/colors.css";
+
+.stopWatch {
+  position: absolute;
+  right: 5rem;
+  top: 4rem;
+  color: makerWhite;
+  font-size: 1.5rem;
+}

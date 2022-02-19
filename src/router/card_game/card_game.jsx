@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { CardItem } from "../../components";
+import { CardItem, StopWatch } from "../../components";
 import styles from "./card_game.module.css";
 
 const CardGame = ({ firebaseDB }) => {
@@ -17,15 +17,9 @@ const CardGame = ({ firebaseDB }) => {
   };
   return (
     <section className={styles.cardGame}>
-      <span className={styles.timer}></span>
+      <StopWatch play={play} />
 
-      <div
-        className={
-          play
-            ? styles.container
-            : `${styles.container} ${styles.containerStop}`
-        }
-      >
+      <div className={styles.container}>
         {play &&
           data.map((item, index) => (
             <CardItem

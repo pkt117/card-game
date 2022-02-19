@@ -19,11 +19,6 @@
   align-items: center;
 }
 
-.containerStop {
-  opacity: 0.7;
-  pointer-events: none;
-}
-
 .play,
 .stop {
   width: 9rem;

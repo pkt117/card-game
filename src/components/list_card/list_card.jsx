@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./list_card.module.css";
 
+//  게임 목록의 카드
 const ListCard = ({ img, gameTitle, path, onClickGame, colectionName }) => {
   return (
     <li className={styles.listCard}>
