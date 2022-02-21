@@ -7,11 +7,14 @@ const GameList = ({ firebaseDB }) => {
   const navigate = useNavigate();
 
   const onClickGame = async (path, collectionName) => {
-    const data = await firebaseDB.getData(collectionName);
-
-    navigate(path, {
-      state: { data: data },
-    });
+    if (collectionName) {
+      const data = await firebaseDB.getData(collectionName);
+      navigate(path, {
+        state: { data: data },
+      });
+    } else {
+      navigate(path);
+    }
   };
 
   return (
@@ -21,9 +24,16 @@ const GameList = ({ firebaseDB }) => {
         <ListCard
           onClickGame={onClickGame}
           img="../images/gameicon.png"
-          gameTitle="card game"
+          gameTitle="Card Game"
           path="/game/card_game"
           collectionName="card"
+        />
+        <ListCard
+          onClickGame={onClickGame}
+          img="../images/gameicon.png"
+          gameTitle="Speed Game"
+          path="/game/speed_game"
+          // collectionName="card"
         />
       </ul>
     </>

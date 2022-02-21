@@ -1,6 +1,6 @@
 import styles from "./app.module.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Game, Login, CardGame, GameList } from "./router";
+import { Game, Login, CardGame, GameList, SpeedGame } from "./router";
 
 function App({ authService, firebaseDB }) {
   return (
@@ -18,6 +18,7 @@ function App({ authService, firebaseDB }) {
               path="card_game"
               element={<CardGame firebaseDB={firebaseDB} />}
             />
+            <Route path="speed_game" element={<SpeedGame />} />
           </Route>
         </Routes>
       </BrowserRouter>
