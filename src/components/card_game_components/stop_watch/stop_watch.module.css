@@ -1,4 +1,4 @@
-@value makerWhite from "../../../common/colors.css";
+@value makerWhite,makerBlack from "../../../common/colors.css";
 
 .stopWatch {
   position: absolute;
@@ -6,4 +6,26 @@
   top: 4rem;
   color: makerWhite;
   font-size: 1.5rem;
+}
+
+.complete {
+  top: 30%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  font-size: 2rem;
+  color: makerBlack;
+}
+
+.clear_title {
+  position: absolute;
+  display: none;
+}
+
+.complete_title {
+  display: block;
+  top: 20%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  font-size: 2rem;
+  color: makerBlack;
 }

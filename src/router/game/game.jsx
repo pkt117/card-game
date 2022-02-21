@@ -10,10 +10,17 @@ const Game = ({ authService }) => {
     navigate("/");
   };
 
+  const onMoveList = () => {
+    navigate("/game/list");
+  };
+
   return (
     <section className={styles.game}>
+      <button className={styles.move_list} onClick={onMoveList}>
+        Game List
+      </button>
       <button className={styles.logout} onClick={onLogout}>
-        logout
+        Logout
       </button>
       <section className={styles.container}>
         <Outlet />

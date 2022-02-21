@@ -12,7 +12,7 @@ export default class FirebaseDB {
 
     if (colectionName === "card") {
       list = [...list, ...list];
-      return this.shuffle(list);
+      return list;
     }
   }
 

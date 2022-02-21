@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styles from "./card_item.module.css";
+import cn from "classnames";
 
 // 카드게임의 각각의 카드
-const CardItem = ({ img, value }) => {
+const CardItem = ({
+  item,
+  img,
+  value,
+  clickCard,
+  index,
+  checkClick,
+  checkSameCard,
+  cardCheck,
+}) => {
   const [rotate, setRotate] = useState(true);
   const [prohibition, setProhibition] = useState(false);
   useEffect(() => {
@@ -12,31 +22,23 @@ const CardItem = ({ img, value }) => {
     }, 2000);
   }, []);
 
-  const onClickCard = () => setRotate((prev) => !prev);
+  const onClickCard = () => clickCard(index);
 
   return (
     <div
-      className={
-        prohibition
-          ? styles.container
-          : `${styles.container} ${styles.prohibition}`
-      }
+      className={cn([styles.container], {
+        [styles.prohibition]: !prohibition,
+        [styles.card_click]: checkClick,
+        [styles.card_flip]: rotate,
+        [styles.card_back]: checkSameCard,
+      })}
+      onClick={onClickCard}
     >
-      <div
-        className={rotate ? styles.card : `${styles.card} ${styles.back}`}
-        onClick={onClickCard}
-      >
+      <div className={`${styles.card} ${styles.card_back}`}>
         <img src={img} alt="" className={styles.image} />
       </div>
-      <div
-        className={rotate ? `${styles.card} ${styles.back}` : styles.card}
-        onClick={onClickCard}
-      >
-        <img
-          src="../images/gameicon.png"
-          alt=""
-          className={styles.back_image}
-        />
+      <div className={styles.card}>
+        <img src="../images/gameicon.png" alt="" className={styles.img_back} />
       </div>
     </div>
   );

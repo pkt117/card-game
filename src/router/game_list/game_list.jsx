@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 const GameList = ({ firebaseDB }) => {
   const navigate = useNavigate();
 
-  const onClickGame = async (path, colectionName) => {
-    const data = await firebaseDB.getData(colectionName);
+  const onClickGame = async (path, collectionName) => {
+    const data = await firebaseDB.getData(collectionName);
 
     navigate(path, {
       state: { data: data },
@@ -16,14 +16,14 @@ const GameList = ({ firebaseDB }) => {
 
   return (
     <>
-      <h1 className={styles.title}>game list</h1>
+      <h1 className={styles.title}>Game List</h1>
       <ul className={styles.list}>
         <ListCard
           onClickGame={onClickGame}
           img="../images/gameicon.png"
           gameTitle="card game"
           path="/game/card_game"
-          colectionName="card"
+          collectionName="card"
         />
       </ul>
     </>
