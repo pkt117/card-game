@@ -2,17 +2,17 @@
 
 .stopWatch {
   position: absolute;
-  right: 5rem;
-  top: 4rem;
+  right: 4rem;
+  top: 1.8rem;
   color: makerWhite;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .complete {
   top: 30%;
   right: 50%;
   transform: translate(50%, -50%);
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: makerBlack;
 }
 
